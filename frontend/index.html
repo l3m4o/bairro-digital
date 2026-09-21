@@ -1,0 +1,238 @@
+<!-- serve para chamar o html  -->
+<!DOCTYPE html>
+
+<!-- aqui e onde você coloca a lingua do pais -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Dashboard de gestão da Mercearia do ja"
+    >
+
+    <!-- (title) serve para o titulo  -->
+    <title>Mercearia do jaao - Início</title>
+
+    <!-- aqui é onde usamos para buscar o css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- o (body) é onde fica todo o conteudo visial do saite.  -->
+<body>
+
+<!-- a (header) serve para classificar algo e separa dos outros, como por exemplo. Ex:essa que estou comentando, serve para a pagina principal. Para ser alterado a logo. -->
+    <header class="header">
+   
+        <!-- a (div) serve para você colocar alguma cor no css, para nao ter que escreve tudo la, pode so colocar a (div da qual você quer muda a cor.) -->
+        <div class="container header-content">
+
+            <!-- a (<a></a>) serve para fazer ligações com outras paginas, relacionada a elas. -->
+            <a href="#" class="logo" aria-label="Mercearia do jao- Página inicial">
+                <span class="logo-icon" aria-hidden="true">🛒</span>
+                <span>Mercearia do jao</span>
+            </a>
+
+            <nav class="navigation" aria-label="Navegação principal">
+                <ul class="navigation-list">
+                    <li>
+                        <a href="#" class="navigation-link active" aria-current="page">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="navigation-link">
+                            Produtos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="navigation-link">
+                            Vendas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="navigation-link">
+                            Clientes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main class="main-content">
+
+        <div class="container">
+
+            <section class="dashboard-intro" aria-labelledby="dashboard-title">
+                <div>
+                    <p class="section-label">Visão geral</p>
+                    <h1 id="dashboard-title">Dashboard</h1>
+                    <p class="section-description">
+                        Acompanhe as principais informações da sua mercearia.
+                    </p>
+                </div>
+            </section>
+
+
+            <section class="metrics" aria-label="Indicadores principais">
+
+                <article class="metric-card stock-card">
+                    <div class="metric-icon" aria-hidden="true">
+                        📦
+                    </div>
+
+                    <div class="metric-content">
+                        <h2>Produtos em estoque</h2>
+                        <p class="metric-value">128</p>
+                        <p class="metric-description">produtos cadastrados</p>
+                    </div>
+                </article>
+
+
+                <article class="metric-card sales-card">
+                    <div class="metric-icon" aria-hidden="true">
+                        💰
+                    </div>
+
+                    <div class="metric-content">
+                        <h2>Vendas Hoje</h2>
+                        <p class="metric-value">R$ 1.250,00</p>
+                        <p class="metric-description">vendas realizadas Hoj e</p>
+                    </div>
+                </article>
+
+
+                <article class="metric-card clients-card">
+                    <div class="metric-icon" aria-hidden="true">
+                        👥
+                    </div>
+
+                    <div class="metric-content">
+                        <h2>Clientes</h2>
+                        <p class="metric-value">86</p>
+                        <p class="metric-description">clientes cadastrados</p>
+                    </div>
+                </article>
+
+            </section>
+
+
+            <section class="receivables-section" aria-labelledby="receivables-title">
+
+                <div class="section-header">
+                    <div>
+                        <p class="section-label">Financeiro</p>
+                        <h2 id="receivables-title">Contas a receber</h2>
+                        <p class="section-description">
+                            Acompanhe os valores que ainda precisam ser recebidos.
+                        </p>
+                    </div>
+
+                    <span class="receivables-count">
+                        3 contas
+                    </span>
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+                        <caption class="sr-only">
+                            Lista de contas a receber
+                        </caption>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Valor</th>
+                                <th scope="col">Data limite</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <span class="customer-name">jao
+                        oão Silva</span>
+                                </td>
+
+                                <td>
+                                    <strong>R$ 120,00</strong>
+                                </td>
+
+                                <td>
+                                    <span class="due-date due-soon">
+                                        10/09/2026
+                                        <span class="status">Próximo</span>
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <span class="customer-name">Maria Santos</span>
+                                </td>
+
+                                <td>
+                                    <strong>R$ 85,50</strong>
+                                </td>
+
+                                <td>
+                                    <span class="due-date due-soon">
+                                        12/09/2026
+                                        <span class="status">Próximo</span>
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <span class="customer-name">Pedro Souza</span>
+                                </td>
+
+                                <td>
+                                    <strong>R$ 230,00</strong>
+                                </td>
+
+                                <td>
+                                    <span class="due-date due-normal">
+                                        15/09/2026
+                                        <span class="status">Pendente</span>
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="container">
+            <p>
+                &copy; 2026 Mercearia do jao
+. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
+```
