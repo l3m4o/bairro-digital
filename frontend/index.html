@@ -1,238 +1,83 @@
-<!-- serve para chamar o html  -->
 <!DOCTYPE html>
-
-<!-- aqui e onde você coloca a lingua do pais -->
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Dashboard de gestão da Mercearia do ja"
-    >
-
-    <!-- (title) serve para o titulo  -->
-    <title>Mercearia do jaao - Início</title>
-
-    <!-- aqui é onde usamos para buscar o css -->
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Mapeamento colaborativo de problemas da cidade.">
+    <title>Bairro Digital | Mapas da cidade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<!-- o (body) é onde fica todo o conteudo visial do saite.  -->
 <body>
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-mark">B</div>
+                <div class="brand-name">bairro<span>.</span>digital</div>
+            </div>
+            <div class="account">
+                <div class="account-copy"><strong>Olá, Marina</strong><small>Minha conta</small></div>
+                <div class="avatar">M</div>
+                <span class="account-chevron" aria-hidden="true">⌄</span>
+            </div>
+        </header>
 
-<!-- a (header) serve para classificar algo e separa dos outros, como por exemplo. Ex:essa que estou comentando, serve para a pagina principal. Para ser alterado a logo. -->
-    <header class="header">
-   
-        <!-- a (div) serve para você colocar alguma cor no css, para nao ter que escreve tudo la, pode so colocar a (div da qual você quer muda a cor.) -->
-        <div class="container header-content">
+        <div class="workspace">
+            <aside class="sidebar" aria-label="Navegação principal">
+                <p class="eyebrow">Painel da cidade</p>
+                <h1>O que acontece<br>no seu bairro?</h1>
+                <nav class="menu">
+                    <button class="menu-button active" type="button" data-view="mapa"><span
+                            class="menu-icon">⌖</span><span class="menu-label">Maps</span></button>
+                    <button class="menu-button" type="button" data-view="problemas"><span
+                            class="menu-icon">▤</span><span class="menu-label">Meus problemas</span><span
+                            class="menu-badge">3</span></button>
+                    <button class="menu-button" type="button" data-view="ajuda"><span class="menu-icon">?</span><span
+                            class="menu-label">Ajuda e SAC</span></button>
+                    <button class="menu-button" type="button" data-view="mais"><span class="menu-icon">＋</span><span
+                            class="menu-label">Mais opções</span></button>
+                </nav>
+                <div class="sidebar-note"><strong>Você faz parte da mudança.</strong>
+                    <p>Avise a vizinhança sobre problemas e acompanhe as soluções.</p>
+                </div>
+            </aside>
 
-            <!-- a (<a></a>) serve para fazer ligações com outras paginas, relacionada a elas. -->
-            <a href="#" class="logo" aria-label="Mercearia do jao- Página inicial">
-                <span class="logo-icon" aria-hidden="true">🛒</span>
-                <span>Mercearia do jao</span>
-            </a>
-
-            <nav class="navigation" aria-label="Navegação principal">
-                <ul class="navigation-list">
-                    <li>
-                        <a href="#" class="navigation-link active" aria-current="page">
-                            Início
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="navigation-link">
-                            Produtos
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="navigation-link">
-                            Vendas
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="navigation-link">
-                            Clientes
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
+            <section class="map-panel" aria-label="Mapa de problemas da cidade">
+                <div class="map-toolbar">
+                    <div class="map-heading">
+                        <h2>Mapa da cidade</h2>
+                        <p>Veja os problemas registrados perto de você</p>
+                    </div>
+                    <button class="location-button" type="button"><span>⌾</span> Usar minha localização</button>
+                </div>
+                <div class="map" role="img" aria-label="Mapa ilustrado com quatro problemas registrados">
+                    <div class="map-search">
+                        <span>⌕ &nbsp; Buscar por endereço ou bairro</span>
+                        <div class="map-controls"><button type="button" aria-label="Aumentar zoom">+</button><button
+                                type="button" aria-label="Diminuir zoom">−</button></div>
+                    </div>
+                    <span class="map-label label-one">Vila Madalena</span><span class="map-label label-two">Jardim
+                        América</span><span class="map-label label-three">Centro</span>
+                    <div class="pin one" title="Iluminação pública"><span>!</span></div>
+                    <div class="pin two" title="Buraco na rua"><span>!</span></div>
+                    <div class="pin three" title="Lixo acumulado"><span>!</span></div>
+                    <div class="pin four" title="Calçada danificada"><span>!</span></div>
+                    <div class="map-legend"><span class="legend-item"><i class="dot"></i> Novo</span><span
+                            class="legend-item"><i class="dot yellow"></i> Em análise</span><span class="legend-item"><i
+                                class="dot green"></i> Resolvido</span></div>
+                </div>
+                <div class="map-footer"><span><strong>127 problemas</strong> registrados na
+                        cidade</span><span>Atualizado agora</span></div>
+            </section>
         </div>
-    </header>
-
-
-    <main class="main-content">
-
-        <div class="container">
-
-            <section class="dashboard-intro" aria-labelledby="dashboard-title">
-                <div>
-                    <p class="section-label">Visão geral</p>
-                    <h1 id="dashboard-title">Dashboard</h1>
-                    <p class="section-description">
-                        Acompanhe as principais informações da sua mercearia.
-                    </p>
-                </div>
-            </section>
-
-
-            <section class="metrics" aria-label="Indicadores principais">
-
-                <article class="metric-card stock-card">
-                    <div class="metric-icon" aria-hidden="true">
-                        📦
-                    </div>
-
-                    <div class="metric-content">
-                        <h2>Produtos em estoque</h2>
-                        <p class="metric-value">128</p>
-                        <p class="metric-description">produtos cadastrados</p>
-                    </div>
-                </article>
-
-
-                <article class="metric-card sales-card">
-                    <div class="metric-icon" aria-hidden="true">
-                        💰
-                    </div>
-
-                    <div class="metric-content">
-                        <h2>Vendas Hoje</h2>
-                        <p class="metric-value">R$ 1.250,00</p>
-                        <p class="metric-description">vendas realizadas Hoj e</p>
-                    </div>
-                </article>
-
-
-                <article class="metric-card clients-card">
-                    <div class="metric-icon" aria-hidden="true">
-                        👥
-                    </div>
-
-                    <div class="metric-content">
-                        <h2>Clientes</h2>
-                        <p class="metric-value">86</p>
-                        <p class="metric-description">clientes cadastrados</p>
-                    </div>
-                </article>
-
-            </section>
-
-
-            <section class="receivables-section" aria-labelledby="receivables-title">
-
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">Financeiro</p>
-                        <h2 id="receivables-title">Contas a receber</h2>
-                        <p class="section-description">
-                            Acompanhe os valores que ainda precisam ser recebidos.
-                        </p>
-                    </div>
-
-                    <span class="receivables-count">
-                        3 contas
-                    </span>
-                </div>
-
-
-                <div class="table-container">
-
-                    <table>
-                        <caption class="sr-only">
-                            Lista de contas a receber
-                        </caption>
-
-                        <thead>
-                            <tr>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Valor</th>
-                                <th scope="col">Data limite</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                            <tr>
-                                <td>
-                                    <span class="customer-name">jao
-                        oão Silva</span>
-                                </td>
-
-                                <td>
-                                    <strong>R$ 120,00</strong>
-                                </td>
-
-                                <td>
-                                    <span class="due-date due-soon">
-                                        10/09/2026
-                                        <span class="status">Próximo</span>
-                                    </span>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    <span class="customer-name">Maria Santos</span>
-                                </td>
-
-                                <td>
-                                    <strong>R$ 85,50</strong>
-                                </td>
-
-                                <td>
-                                    <span class="due-date due-soon">
-                                        12/09/2026
-                                        <span class="status">Próximo</span>
-                                    </span>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    <span class="customer-name">Pedro Souza</span>
-                                </td>
-
-                                <td>
-                                    <strong>R$ 230,00</strong>
-                                </td>
-
-                                <td>
-                                    <span class="due-date due-normal">
-                                        15/09/2026
-                                        <span class="status">Pendente</span>
-                                    </span>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-
-                </div>
-
-            </section>
-
-        </div>
-
     </main>
-
-
-    <footer class="footer">
-        <div class="container">
-            <p>
-                &copy; 2026 Mercearia do jao
-. Todos os direitos reservados.
-            </p>
-        </div>
-    </footer>
-
+    <script src="js/app.js"></script>
 </body>
+
 </html>
-```
