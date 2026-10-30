@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bairro Digital</title>
+  
+  <!-- estilo do mapa -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
+  <!-- arquivo do CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barra de Navegação -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-icon">📍</span>
+      <!--nome da plataforma -->
+      <h1>Bairro Digital</h1>
+    </div>
+    <div class="nav-actions">
+        <!--botão para abrir model de cadastro de ocorrência-->
+      <button class="btn btn-primary" onclick="abrirModalRelato()">+ Novo Relato</button>
+      <!--botão de login/perfil-->
+      <button class="btn btn-outline" id="btnAuth" onclick="abrirModalAuth()">Entrar / Cadastrar</button>
+    </div>t
+  </header>
+
+  <!-- Layout Principal (painel latral e mapa) -->
+  <main class="main-container">
+    <!--painel lateral(esquerda)-->
+    <aside class="sidebar">
+        <!--painel de estatisticas-->
+      <div class="stats-panel">
+        <div class="stat-card">
+          <span class="stat-value" id="statTotal">0</span>
+          <span class="stat-label">Total</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statAnalise">0</span>
+          <span class="stat-label">Em Análise</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statResolvidos">0</span>
+          <span class="stat-label">Resolvidos</span>
+        </div>
+      </div>
+<!--filtro por categoria-->
+      <div class="filter-section">
+        <h3>Filtrar Ocorrências</h3>
+        <!--alterar/adicionar: novas categorias no filtro se necessário-->
+        <select id="categoriaFilter" class="form-control" onchange="filtrarRelatos()">
+          <option value="TODAS">Todas as Categorias</option>
+          <option value="Buraco / Asfalto">Buraco / Asfalto (Vermelho)</option>
+          <option value="Iluminação Pública">Iluminação Pública (Amarelo)</option>
+          <option value="Vazamento / Água">Vazamento / Água (Verde)</option>
+          <option value="Outros">Outros</option>
+        </select>
+      </div>
+
+      <!--feed dos últimos relatos-->
+      <div class="feed-section">
+        <h3>Últimos Relatos</h3>
+        <!--A lista é preenchida dinamicamente pelo javascript-->
+        <div id="feedList" class="feed-list"></div>
+      </div>
+    </aside>
+
+    <!--área do mapa (direira)-->
+    <section class="map-container">
+      <div id="map"></div>
+    </section>
+  </main>
+
+  <!-- Modal de autenticação do Cadastro/Login -->
+  <div id="modalAuth" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Acessar Conta</h2>
+        <span class="close-btn" onclick="fecharModalAuth()">&times;</span>
+      </div>
+      <form id="formAuth" onsubmit="salvarAutenticacao(event)">
+        <div class="form-group">
+          <label for="nomeUsuario">Nome de Usuário *</label>
+          <input type="text" id="nomeUsuario" class="form-control" placeholder="Ex: João da Silva" required>
+        </div>
+        <div class="form-group">
+          <label for="senhaUsuario">Senha *</label>
+          <input type="password" id="senhaUsuario" class="form-control" placeholder="Sua senha" required>
+        </div>
+        <div class="form-group">
+          <label for="enderecoUsuario">Endereço Residencial *</label>
+          <input type="text" id="enderecoUsuario" class="form-control" placeholder="Rua XV de Novembro, 1000" required>
+        </div>
+        <button type="submit" class="btn btn-primary full-width">Salvar e Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Novo Relato -->
+  <div id="modalRelato" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Registrar Nova Ocorrência</h2>
+        <span class="close-btn" onclick="fecharModalRelato()">&times;</span>
+      </div>
+      <form id="formRelato" onsubmit="salvarRelato(event)">
+
+        <!--seleção de categoria-->
+        <div class="form-group">
+          <label for="categoria">Categoria *</label>
+          <!--alterae/adicionar as opçoes do formulário-->
+          <select id="categoria" class="form-control" required onchange="atualizarGravidadePorCategoria()">
+            <option value="">Selecione...</option>
+            <option value="Buraco / Asfalto">Buraco / Asfalto (Crítico - Vermelho)</option>
+            <option value="Iluminação Pública">Iluminação Pública (Média - Amarelo)</option>
+            <option value="Vazamento / Água">Vazamento / Água (Alta - verdel)</option>
+            <option value="Outros">Outros (Baixa - Verde)</option>
+          </select>
+        </div>
+
+        <!--decrição-->
+        <div class="form-group">
+          <label for="descricao">Descrição do Problema *</label>
+          <textarea id="descricao" class="form-control" rows="3" placeholder="Descreva a situação encontrada..." required></textarea>
+        </div>
+
+        <!--origem da locação(gps vc manual)-->
+        <div class="form-group">
+          <label>Origem da Localização *</label>
+          <div class="radio-group">
+            <label><input type="radio" name="origemLoc" value="GPS" checked onclick="alternarOrigemLoc('GPS')"> GPS Atual</label>
+            <label><input type="radio" name="origemLoc" value="MANUAL" onclick="alternarOrigemLoc('MANUAL')"> Informar Endereço</label>
+          </div>
+        </div>
+
+        <!--campo de endereço(so vai aparecer se for modo manual)-->
+        <div class="form-group" id="groupEnderecoManual" style="display: none;">
+          <label for="enderecoProblema">Endereço do Local *</label>
+          <input type="text" id="enderecoProblema" class="form-control" placeholder="Rua e número do problema">
+        </div>
+
+        <!--anexo de mídia-->
+        <div class="form-group">
+          <label for="midiaInput">Adicionar Fotos</label>
+          <input type="file" id="midiaInput" class="form-control" accept="image/*" multiple onchange="previewMidia(event)">
+          <div id="midiaPreviewContainer" class="preview-container"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary full-width">Publicar Relato</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- biblioteca do mapa -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+  <!-- arquivo js -->
+  <script src="app.js"></script>
+</body>
+</html>
