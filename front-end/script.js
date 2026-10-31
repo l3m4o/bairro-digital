@@ -11,8 +11,8 @@ let relatos = [
     gravidade: "Crítica",
     descricao: "Grande buraco na pista principal atrapalhando os veículos.",
     endereco: "Rua Marechal Deodoro, 500",
-    lat: -25.4250000,
-    lng: -49.2700000,
+    lat: -23.4043482,
+    lng: -51.9801559,
     origem: "MANUAL",
     status: "Em análise",
     data: "2026-03-28"
@@ -30,6 +30,20 @@ let relatos = [
     origem: "GPS",
     status: "Aberto",
     data: "2026-03-29"
+  },
+  {
+    id: 3,
+    usuario: "Luiz Fernando",
+    categoria: "Intulho no cantero",
+    cor: "bege",
+    gravidade: "muito baixo",
+    descriacao: "esta tendo lixo acumulado no cantero.",
+    endereco: "Av. Guaiapó, 826",
+    lat:-23.4043371,
+    lng:-51.9801587,
+    origem:"GPS",
+    status: "Em análise",
+    data: "2026-08-19"
   }
 ];
 
@@ -76,6 +90,7 @@ function getCorBadge(categoria) {
   if (categoria.includes("Buraco")) return "bg-vermelho";
   if (categoria.includes("Iluminação")) return "bg-amarelo";
   if (categoria.includes("Vazamento")) return "bg-verde";
+  if (categoria.includes("lixo")) return "bg-bege";
   return "bg-verde";
 }
 
@@ -83,6 +98,7 @@ function getHexCor(categoria) {
   if (categoria.includes("Buraco")) return "#ef4444";
   if (categoria.includes("Iluminação")) return "#f59e0b";
   if (categoria.includes("Vazamento")) return "#65b307F";
+  if (categoria.includes("lixo")) return "#EDE8D0";
   return "#10b981";
 }
 
@@ -98,7 +114,7 @@ function atualizarInterface() {
           <small>${r.status}</small>
         </div>
         <p><strong>${r.descricao}</strong></p>
-        <small style="color: #64748b;">📍 ${r.endereco}</small>
+        <small style="color:rgb(106, 131, 165);">📍 ${r.endereco}</small>
       </div>
     `;
   });

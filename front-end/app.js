@@ -30,6 +30,20 @@ let relatos = [
     origem: "GPS",
     status: "Aberto",
     data: "2026-03-29"
+  },
+  {
+    id: 3,
+    usuario: "Luiz Fernando",
+    categoria: "Intulho no cantero",
+    cor: "bege",
+    gravidade: "muito baixo",
+    descricao: "Esta tendo lixo acumulado no cantero.",
+    endereco: "Av. Guaiapó, 826",
+    lat:-23.4043371,
+    lng:-51.9801587,
+    origem:"GPS",
+    status: "Em análise",
+    data: "2026-08-19"
   }
 ];
 
@@ -75,15 +89,17 @@ function renderizarMarcadores(lista) {
 function getCorBadge(categoria) {
   if (categoria.includes("Buraco")) return "bg-vermelho";
   if (categoria.includes("Iluminação")) return "bg-amarelo";
-  if (categoria.includes("Vazamento")) return "bg-azul";
-  return "bg-verde";
+  if (categoria.includes("Vazamento")) return "bg-verde";
+  if (categoria.includes("lixo")) return "bg-bege";
+  return "bg-bege";
 }
 
 function getHexCor(categoria) {
   if (categoria.includes("Buraco")) return "#ef4444";
   if (categoria.includes("Iluminação")) return "#f59e0b";
-  if (categoria.includes("Vazamento")) return "#3b82f6";
-  return "#10b981";
+  if (categoria.includes("Vazamento")) return "#10b981";
+  if (categoria.includes("lixo")) return "#ede8d0";
+  return "#ede8d0";
 }
 
 function atualizarInterface() {

@@ -18,13 +18,13 @@
   /*barra de navegação*/
   .navbar {
     /*cor de fundo da navbar principal*/
-    background-color: #1e293b;
+    background-color: #1a1a1a;
     color: white;
     padding: 12px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 8px rgba(209, 181, 23, 0.15);
   }
   
   .logo {
@@ -124,8 +124,8 @@
   /* cores específicas para cada tipo de problema*/
   .bg-vermelho { background-color: #ef4444; }
   .bg-amarelo { background-color: #f59e0b; }
-  .bg-azul { background-color: #3b82f6; }
-  .bg-verde { background-color: #10b981; }
+  .bg-verde { background-color: #57d310; }
+  .bg-bege { background-color: #ede8d0; }
   
   /*estilo base de todos os botões */
   .btn {
