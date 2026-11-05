@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bairro Digital: acompanhe problemas urbanos de Maringá.">
+  <title>Bairro Digital | Mapa de Maringá</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="inicio">
+  <!-- Navegação pública e acesso à sessão do morador. -->
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Bairro Digital - início" title="Bairro Digital - início">
+      <span class="brand-mark"><img class="brand-logo" src="assets/logo-bairro-digital.jpeg" alt="Logo Bairro Digital"><span class="brand-fallback" hidden>BD</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a class="nav-icon-link active" href="index.html" aria-current="page" aria-label="Mapa" title="Mapa"><img src="assets/icone-mapa.png" alt=""></a>
+      <a class="nav-icon-link" href="ajuda.html" aria-label="Ajuda" title="Ajuda"><img src="assets/icone-ajuda.png" alt=""></a>
+      <a class="nav-icon-link" href="nova-denuncia.html" aria-label="Nova denúncia" title="Nova denúncia"><img src="assets/icone-nova-denuncia.png" alt=""></a>
+      <a class="nav-icon-link" href="conta.html" aria-label="Minha conta" title="Minha conta"><img src="assets/icone-conta.png" alt=""></a>
+    </nav>
+    <div class="top-actions">
+      <a class="button button-small button-outline" data-auth-link href="login.html">Entrar</a>
+    </div>
+  </header>
+
+  <!-- O mapa permanece como a área principal da página inicial. -->
+  <main class="map-layout">
+    <section class="map-panel" aria-label="Mapa de denúncias de Maringá">
+      <div class="map-heading">
+        <div>
+          <p class="eyebrow">Cidade Verde</p>
+          <h1>Problemas urbanos em Maringá</h1>
+        </div>
+        <span class="map-status"><span class="live-dot"></span> Dados da cidade</span>
+      </div>
+      <div class="map-canvas" id="map-canvas">
+        <div class="map-label label-centro">Zona 01 · Centro</div>
+        <div class="map-label label-zona7">Zona 07</div>
+        <div class="map-label label-vila">Vila Operária</div>
+        <div class="map-label label-avenida">Av. Brasil</div>
+        <div class="road road-horizontal road-one"></div>
+        <div class="road road-horizontal road-two"></div>
+        <div class="road road-horizontal road-three"></div>
+        <div class="road road-vertical road-four"></div>
+        <div class="road road-vertical road-five"></div>
+        <div class="road road-vertical road-six"></div>
+        <div class="park park-one" aria-label="Área verde"></div>
+        <div class="park park-two" aria-label="Área verde"></div>
+        <div class="map-river"></div>
+        <div class="map-controls">
+          <button type="button" aria-label="Aumentar zoom">+</button>
+          <button type="button" aria-label="Diminuir zoom">−</button>
+        </div>
+      </div>
+      <div class="map-legend" aria-label="Legenda de gravidade">
+        <span><i class="severity-dot low"></i>Baixa</span>
+        <span><i class="severity-dot moderate"></i>Moderada</span>
+        <span><i class="severity-dot medium"></i>Média</span>
+        <span><i class="severity-dot high"></i>Perigosa</span>
+      </div>
+    </section>
+
+    <!-- A lista resume relatos; os detalhes exigem autenticação. -->
+    <aside class="report-sidebar">
+      <div class="sidebar-head">
+        <div>
+          <p class="eyebrow">Maringá, PR</p>
+          <h2>Denúncias recentes</h2>
+        </div>
+        <span class="count-badge" id="report-count">0</span>
+      </div>
+      <p class="muted">Veja os relatos públicos da sua cidade. Entre para interagir ou acompanhar um caso.</p>
+      <p class="demo-notice" id="demo-notice" hidden>Dados fictícios de demonstração — a API pública está indisponível.</p>
+      <div class="report-list" id="report-list" aria-live="polite"></div>
+      <a class="button button-full" href="nova-denuncia.html">Registrar um problema</a>
+    </aside>
+  </main>
+  <footer class="site-footer"><span>© 2026 Bairro Digital</span><span>Feito para cuidar de Maringá</span></footer>
+  <script src="js/data.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

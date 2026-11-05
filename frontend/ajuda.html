@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ajuda | Bairro Digital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="ajuda">
+  <!-- Orientações públicas e encaminhamentos por tipo de ocorrência. -->
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Bairro Digital - início" title="Bairro Digital - início">
+      <span class="brand-mark"><img class="brand-logo" src="assets/logo-bairro-digital.jpeg" alt="Logo Bairro Digital"><span class="brand-fallback" hidden>BD</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a class="nav-icon-link" href="index.html" aria-label="Mapa" title="Mapa"><img src="assets/icone-mapa.png" alt=""></a>
+      <a class="nav-icon-link active" href="ajuda.html" aria-current="page" aria-label="Ajuda" title="Ajuda"><img src="assets/icone-ajuda.png" alt=""></a>
+      <a class="nav-icon-link" href="nova-denuncia.html" aria-label="Nova denúncia" title="Nova denúncia"><img src="assets/icone-nova-denuncia.png" alt=""></a>
+      <a class="nav-icon-link" href="conta.html" aria-label="Minha conta" title="Minha conta"><img src="assets/icone-conta.png" alt=""></a>
+    </nav>
+    <div class="top-actions">
+      <a class="button button-small button-outline" data-auth-link href="login.html">Entrar</a>
+    </div>
+  </header>
+  <main class="content">
+    <div class="page-intro">
+      <p class="eyebrow">Orientação ao morador</p>
+      <h1>Quem pode ajudar?</h1>
+      <p class="muted">Escolha a categoria do problema para saber como registrar o relato e qual órgão procurar.</p>
+    </div>
+    <div class="help-grid" id="help-list"></div>
+    <aside class="notice">
+      <strong>Em caso de incêndio, não registre pelo Bairro Digital.</strong>
+      <span>Ligue para o Corpo de Bombeiros pelo <b>193</b>. Em uma emergência, procure um local seguro primeiro.</span>
+    </aside>
+  </main>
+  <script src="js/data.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

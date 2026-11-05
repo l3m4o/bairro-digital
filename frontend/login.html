@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar | Bairro Digital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="login">
+  <!-- Login de moradores; o redirect preserva a página de origem. -->
+  <main class="auth-shell">
+    <a class="brand auth-brand" href="index.html">
+      <span class="brand-mark"><img class="brand-logo" src="assets/logo-bairro-digital.jpeg" alt="Logo Bairro Digital"><span class="brand-fallback" hidden>BD</span></span>
+    </a>
+    <section class="auth-card" aria-labelledby="login-title">
+      <p class="eyebrow">Acesso do morador</p>
+      <h1 id="login-title">Entre para continuar</h1>
+      <p class="muted">Acompanhe suas denúncias e participe das conversas do bairro.</p>
+      <form id="login-form" class="form-stack">
+        <label for="login-username">Nome de usuário</label>
+        <input id="login-username" name="username" required autocomplete="username" placeholder="ex.: ana.silva">
+        <label for="login-password">Senha</label>
+        <input id="login-password" name="password" type="password" required autocomplete="current-password" placeholder="Digite sua senha">
+        <p class="form-error" id="login-error" role="alert"></p>
+        <button class="button button-full" type="submit">Entrar na conta</button>
+      </form>
+      <div class="auth-divider"><span>ou</span></div>
+      <p class="center-text">Ainda não tem cadastro? <a href="cadastro.html">Criar conta</a></p>
+      <p class="center-text"><a href="admin.html">Entrar como administrador</a></p>
+    </section>
+  </main>
+  <script src="js/data.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

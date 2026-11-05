@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha conta | Bairro Digital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="conta">
+  <!-- Área protegida com perfil e denúncias do usuário atual. -->
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Bairro Digital - início" title="Bairro Digital - início">
+      <span class="brand-mark"><img class="brand-logo" src="assets/logo-bairro-digital.jpeg" alt="Logo Bairro Digital"><span class="brand-fallback" hidden>BD</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a class="nav-icon-link" href="index.html" aria-label="Mapa" title="Mapa"><img src="assets/icone-mapa.png" alt=""></a>
+      <a class="nav-icon-link" href="ajuda.html" aria-label="Ajuda" title="Ajuda"><img src="assets/icone-ajuda.png" alt=""></a>
+      <a class="nav-icon-link" href="nova-denuncia.html" aria-label="Nova denúncia" title="Nova denúncia"><img src="assets/icone-nova-denuncia.png" alt=""></a>
+      <a class="nav-icon-link active" href="conta.html" aria-current="page" aria-label="Minha conta" title="Minha conta"><img src="assets/icone-conta.png" alt=""></a>
+    </nav>
+    <div class="top-actions">
+      <a class="button button-small button-outline" data-auth-link href="login.html">Entrar</a>
+    </div>
+  </header>
+  <main class="content">
+    <div class="page-intro">
+      <p class="eyebrow">Área do morador</p>
+      <h1>Minha conta</h1>
+    </div>
+    <div class="account-grid">
+      <section class="panel profile-card" id="profile-card" aria-live="polite"></section>
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Acompanhamento</p>
+            <h2>Minhas denúncias</h2>
+          </div>
+          <a class="button button-small" href="nova-denuncia.html">Nova denúncia</a>
+        </div>
+        <div id="my-reports" class="my-reports" aria-live="polite"></div>
+      </section>
+    </div>
+  </main>
+  <script src="js/data.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿/* Tokens de identidade e regras compartilhadas por todas as páginas. */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.55 "Segoe UI", Arial, sans-serif;
+}
+a {
+  color: var(--green);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+button, input, textarea, select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* Tema claro: fundo branco com verde institucional e texto escuro. */
+:root {
+  --bg: #ffffff;
+  --surface: #f1f5e7;
+  --text: #243018;
+  --muted: #526044;
+  --line: rgba(36, 48, 24, .24);
+  --green: #4a701c;
+  --moderate: #4a701c;
+  --green-dark: #365214;
+  --accent: #dce8b9;
+  --danger: #a9362d;
+  --warning: #8a6413;
+  --low: #d9aab7;
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel administrativo | Bairro Digital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="admin">
+  <!-- A sessão administrativa é validada pelo backend antes do painel. -->
+  <header class="topbar admin-bar">
+    <a class="brand" href="admin.html" aria-label="Bairro Digital - administração" title="Bairro Digital - administração">
+      <span class="brand-mark"><img class="brand-logo" src="assets/logo-bairro-digital.jpeg" alt="Logo Bairro Digital"><span class="brand-fallback" hidden>BD</span></span>
+      <span><small>Administração</small></span>
+    </a>
+    <div class="top-actions">
+      <a class="button button-small button-outline" href="index.html">Voltar ao mapa</a>
+    </div>
+  </header>
+  <main class="content">
+    <div class="page-intro">
+      <p class="eyebrow">Acesso restrito</p>
+      <h1>Painel administrativo</h1>
+      <p class="muted">Avalie denúncias e atualize seus encaminhamentos com os dados fornecidos pela API.</p>
+    </div>
+    <!-- Operações de gravidade, status e usuários dependem da API autorizada. -->
+    <section class="panel">
+      <p class="muted">A atribuição de gravidade, alteração de status e gerenciamento de usuários dependem das operações administrativas disponibilizadas e autorizadas pela API. Nenhuma permissão é concedida por controles visuais.</p>
+      <div class="section-heading">
+        <h2>Denúncias para avaliação</h2>
+        <label class="sr-only" for="admin-filter">Filtrar denúncias</label>
+        <select id="admin-filter">
+          <option value="todas">Todas</option>
+          <option value="pendente">Pendentes</option>
+          <option value="processo">Em processo</option>
+          <option value="finalizada">Finalizadas</option>
+          <option value="repassada">Repassadas à prefeitura</option>
+        </select>
+      </div>
+      <div class="admin-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Relato</th>
+              <th scope="col">Endereço</th>
+              <th scope="col">Gravidade</th>
+              <th scope="col">Status</th>
+              <th scope="col">Ação</th>
+            </tr>
+          </thead>
+          <tbody id="admin-reports"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="js/data.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

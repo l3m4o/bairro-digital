@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Criar conta | Bairro Digital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="cadastro">
+  <!-- Cadastro envia os dados e a foto obrigatória para a API. -->
+  <main class="auth-shell">
+    <a class="brand auth-brand" href="index.html">
+      <span class="brand-mark"><img class="brand-logo" src="assets/logo-bairro-digital.jpeg" alt="Logo Bairro Digital"><span class="brand-fallback" hidden>BD</span></span>
+    </a>
+    <section class="auth-card" aria-labelledby="register-title">
+      <p class="eyebrow">Cadastro de morador</p>
+      <h1 id="register-title">Crie sua conta</h1>
+      <p class="muted">Use a plataforma para registrar e acompanhar melhorias no seu bairro.</p>
+      <form id="register-form" class="form-stack">
+        <label for="register-name">Nome completo</label>
+        <input id="register-name" name="name" required placeholder="Seu nome completo">
+        <label for="register-username">Nome de usuário</label>
+        <input id="register-username" name="username" required placeholder="Como você será identificado">
+        <label for="register-password">Senha</label>
+        <input id="register-password" name="password" type="password" minlength="6" required placeholder="Mínimo de 6 caracteres">
+        <label for="register-photo">Foto de perfil <span class="optional">(opcional)</span></label>
+        <input id="register-photo" name="photo" type="file" accept="image/*">
+        <img id="photo-preview" class="photo-preview" alt="Pré-visualização da foto selecionada" hidden>
+        <p class="form-error" id="register-error" role="alert"></p>
+        <button class="button button-full" type="submit">Criar minha conta</button>
+      </form>
+      <p class="center-text">Já possui uma conta? <a href="login.html">Entrar</a></p>
+    </section>
+  </main>
+  <script src="js/data.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

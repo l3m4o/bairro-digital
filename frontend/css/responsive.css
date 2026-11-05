@@ -1,0 +1,87 @@
+﻿/* Ajustes de navegação, mapa e formulários para telas menores. */
+@media (max-width: 800px) {
+  .topbar {
+    padding: 12px 5vw;
+    flex-wrap: wrap;
+    gap: 13px;
+  }
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    overflow-x: auto;
+    margin-left: 0;
+  }
+  .main-nav a {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .main-nav .nav-icon-link {
+    flex: 0 0 34px;
+  }
+  .map-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .map-panel {
+    order: 1;
+    padding: 25px 5vw 15px;
+  }
+  .report-sidebar {
+    order: 2;
+    border-right: 0;
+    border-top: 1px solid var(--line);
+    padding: 25px 5vw;
+  }
+  .map-canvas {
+    min-height: 420px;
+  }
+  .map-heading {
+    display: block;
+  }
+  .map-status {
+    display: inline-block;
+    margin-top: 11px;
+  }
+  .account-grid, .help-grid {
+    grid-template-columns: 1fr;
+  }
+  .content {
+    padding-top: 40px;
+  }
+  .auth-brand {
+    position: static;
+    align-self: start;
+  }
+  .auth-shell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .auth-card {
+    padding: 25px;
+  }
+  .site-footer {
+    gap: 10px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 500px) {
+  .map-heading h1, .page-intro h1 {
+    font-size: 28px;
+  }
+  .panel {
+    padding: 20px;
+  }
+  .notice {
+    display: block;
+  }
+  .notice span {
+    display: block;
+    margin-top: 7px;
+  }
+  .detail-actions {
+    flex-wrap: wrap;
+  }
+}

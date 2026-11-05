@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nova denúncia | Bairro Digital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="nova-denuncia">
+  <!-- Formulário protegido para usuários autenticados. -->
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Bairro Digital - início" title="Bairro Digital - início">
+      <span class="brand-mark"><img class="brand-logo" src="assets/logo-bairro-digital.jpeg" alt="Logo Bairro Digital"><span class="brand-fallback" hidden>BD</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a class="nav-icon-link" href="index.html" aria-label="Mapa" title="Mapa"><img src="assets/icone-mapa.png" alt=""></a>
+      <a class="nav-icon-link" href="ajuda.html" aria-label="Ajuda" title="Ajuda"><img src="assets/icone-ajuda.png" alt=""></a>
+      <a class="nav-icon-link active" href="nova-denuncia.html" aria-current="page" aria-label="Nova denúncia" title="Nova denúncia"><img src="assets/icone-nova-denuncia.png" alt=""></a>
+      <a class="nav-icon-link" href="conta.html" aria-label="Minha conta" title="Minha conta"><img src="assets/icone-conta.png" alt=""></a>
+    </nav>
+    <div class="top-actions">
+      <a class="button button-small button-outline" data-auth-link href="login.html">Entrar</a>
+    </div>
+  </header>
+  <main class="content form-page">
+    <div class="page-intro">
+      <p class="eyebrow">Participação cidadã</p>
+      <h1>Registrar uma denúncia</h1>
+      <p class="muted">Descreva o problema com clareza. A gravidade será avaliada pela administração.</p>
+    </div>
+    <!-- A gravidade não é escolhida pelo denunciante. -->
+    <form id="report-form" class="panel form-stack">
+      <label for="report-description">Comentário ou descrição</label>
+      <textarea id="report-description" name="description" required rows="5" placeholder="Conte o que está acontecendo..."></textarea>
+      <label for="report-address">Endereço do problema</label>
+      <input id="report-address" name="address" required placeholder="Rua, número e bairro em Maringá">
+      <label for="report-photo">Foto <span class="required-mark">(obrigatória)</span></label>
+      <input id="report-photo" name="photo" type="file" accept="image/*" required>
+      <label class="checkbox-label" for="report-location">
+        <input id="report-location" name="location" type="checkbox" required>
+        Confirmo que informei a localização manualmente.
+      </label>
+      <p class="form-error" id="report-error" role="alert"></p>
+      <div class="form-actions">
+        <a class="button button-outline" href="index.html">Cancelar</a>
+        <button class="button" type="submit">Enviar denúncia</button>
+      </div>
+    </form>
+  </main>
+  <script src="js/data.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
